@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Caps_Lock as Ctrl in keyboard shortcuts, but as Caps_Lock in single tap.
+if xmodmap -pm | grep -q Shift_Lock; then
+	xmodmap -e "remove shift = Shift_Lock"
+	xmodmap -e "keycode 66 = Hyper_L"
+	xmodmap -e "remove mod4 = Hyper_L"
+	xmodmap -e "add Control = Hyper_L"
+	xmodmap -e "keycode any = Shift_Lock"
+	xcape -e "Hyper_L=Shift_Lock"
+	xmodmap -e "add shift = Shift_Lock"
+else
+	xmodmap -e "remove lock = Caps_Lock"
+	xmodmap -e "keycode 66 = Hyper_L"
+	xmodmap -e "remove mod4 = Hyper_L"
+	xmodmap -e "add Control = Hyper_L"
+	xmodmap -e "keycode any = Caps_Lock"
+	xcape -e "Hyper_L=Caps_Lock"
+fi
