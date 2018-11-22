@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pkill xcape
+
 # Caps_Lock as Ctrl in keyboard shortcuts, but as Caps_Lock in single tap.
 if xmodmap -pm | grep -q Shift_Lock; then
 	xmodmap -e "remove shift = Shift_Lock"
