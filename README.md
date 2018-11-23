@@ -3,11 +3,12 @@ change `Caps_Lock` behaviour in taps (press & release).
 
 You can add this script to startup applications list.
 
-### Prerequisites:
+### Prerequisites
 
 	xmodmap
 	xcape
 
 ### Notes
 
-You may need to re-run this script after connecting/disconnecting monitor(s).
+You may need to re-run this script after connecting/disconnecting monitor(s),
+suspend/resume and when keyboard map gets remapped by some applications.
